@@ -33,5 +33,8 @@ if cnpj:
             df.columns=['CNAE','Descrição','Valor']
             df=df.merge(temp,on='CNAE',how='left')
 
+            st.text(f'{cnpj} - {j["razao_social"]}')
+            st.text(f'{j['uf']} - {j["municipio"]} - {j['bairro']} - {j['cep']}')
+            st.text(f'{j["descricao_tipo_de_logradouro"]} {j["logradouro"]} N°{j["numero"]} complemento {j['complemento']}')
             st.dataframe(df, hide_index=True)
 
